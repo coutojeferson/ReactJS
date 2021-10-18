@@ -1,85 +1,25 @@
 import React from 'react';
-// Organize os produtos como mostrado no vídeo
-// Mostre apenas produtos que forem mais caros que R$ 1500
-const produtos = [
-  {
-    id: 1,
-    nome: 'Smartphone',
-    preco: 'R$ 2000',
-    cores: ['#29d8d5', '#252a34', '#fc3766'],
-  },
-  {
-    id: 2,
-    nome: 'Notebook',
-    preco: 'R$ 3000',
-    cores: ['#ffd045', '#d4394b', '#f37c59'],
-  },
-  {
-    id: 3,
-    nome: 'Tablet',
-    preco: 'R$ 1500',
-    cores: ['#365069', '#47c1c8', '#f95786'],
-  },
-];
+import Footer from './Footer';
+import Form from './Form/Form';
+import Header from './Header';
 
-// const App = () => {
-//   return (
-//     <section>
-//       {produtos.map((item) => (
-//         <>
-//           <h1>{item.nome}</h1>
-//           <p>{item.preco}</p>
-//           <ul>
-//             <li style={{ backgroundColor: item.cores }}>{item.cores}</li>
-//           </ul>
-//         </>
-//       ))}
-//     </section>
-//   );
-// };
-
-const App = () => {
-  const dados = produtos.filter(
-    ({ preco }) => Number(preco.replace('R$ ', '')) > 1500,
-  );
-  // console.log(dados);
-  return (
-    <section>
-      {dados.map(({ id, nome, preco, cores }) => (
-        <div key={id}>
-          <h1>{nome}</h1>
-          <p>Preço: R$ {preco}</p>
-          <ul>
-            {cores.map((cor) => (
-              <li style={{ backgroundColor: cor, color: 'white' }} key={cor}>
-                {cor}
-              </li>
-            ))}
-          </ul>
-        </div>
-      ))}
-    </section>
-  );
+const Teste = () => {
+  const active = false;
+  if (active) {
+    return <p>teste</p>;
+  } else {
+    return null;
+  }
 };
 
-// const App = () => {
-//   const livros = [
-//     { nome: 'A Game of Thrones', ano: 1996 },
-//     { nome: 'A Clash of Kings', ano: 1998 },
-//     { nome: 'A Storm of Swords', ano: 2000 },
-//   ];
-
-//   return (
-//     <ul>
-//       {livros
-//         .filter((livro) => livro.ano >= 1998)
-//         .map((livro) => (
-//           <li key={livro.nome}>
-//             {livro.nome}, {livro.ano}
-//           </li>
-//         ))}
-//     </ul>
-//   );
-// };
-
+const App = () => {
+  return (
+    <>
+      <Teste />
+      <Header />
+      <Form />
+      <Footer />
+    </>
+  );
+};
 export default App;
